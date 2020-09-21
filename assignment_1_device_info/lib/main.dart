@@ -1,4 +1,5 @@
 import 'package:assignment_device_info/device_tab.dart';
+import 'package:assignment_device_info/hardware_tab.dart';
 import 'package:assignment_device_info/system_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
           children: [
             DeviceTab(),
             SystemTab(),
-            Icon(Icons.directions_bike),
+            HardwareTab(),
           ],
         ),
       ),
