@@ -1,4 +1,4 @@
-# assingment_1_nurseiit_20172001
+# assignment_1_device_info
 
 Mobile Computing, Programming Assignment #1.
 
