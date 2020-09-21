@@ -60,37 +60,53 @@ class DeviceInfoDisplay extends StatefulWidget {
 
 class _DeviceInfoDisplayState extends State<DeviceInfoDisplay> {
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
-  final List<String> categories = [
-    'Model',
-    'Brand',
-    'Manufacturer',
-    'Board',
-    'Bootloader',
-    'Device',
-    'Display',
-    'Hardware',
-    'Host',
-    'ID',
-    'Product'
-  ];
+
+  Map<String, dynamic> _deviceData = <String, dynamic>{};
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceInfo();
+  }
+
+  Future<void> initDeviceInfo() async {
+    final AndroidDeviceInfo build = await deviceInfoPlugin.androidInfo;
+    setState(() {
+      _deviceData = <String, dynamic>{
+        'Model': build.model,
+        'Brand': build.brand,
+        'Manufacturer': build.manufacturer,
+        'Board': build.board,
+        'Bootloader': build.bootloader,
+        'Device': build.device,
+        'Display': build.display,
+        'Hardware': build.hardware,
+        'Host': build.host,
+        'ID': build.id,
+        'Product': build.product
+      };
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
       child: Table(
-        children: categories
+        children: _deviceData.keys
             .map(
-              (category) => TableRow(children: [
-                Padding(
-                  child: Text(category),
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                ),
-                Padding(
-                  child: Text('kjkjskdjkjsdkjsdjkj'),
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                ),
-              ]),
+              (property) => TableRow(
+                children: [
+                  Padding(
+                    child: Text(property),
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                  ),
+                  Padding(
+                    child: Text('${_deviceData[property]}'),
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                  ),
+                ],
+              ),
             )
             .toList(),
       ),
