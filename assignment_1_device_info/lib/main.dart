@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-
 import 'package:assignment_device_info/device_tab.dart';
+import 'package:assignment_device_info/system_tab.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(DeviceInfo());
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             DeviceTab(),
-            Icon(Icons.directions_transit),
+            SystemTab(),
             Icon(Icons.directions_bike),
           ],
         ),
