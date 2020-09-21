@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:device_info/device_info.dart';
 
 void main() {
   runApp(DeviceInfo());
@@ -50,7 +53,13 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class DeviceInfoDisplay extends StatelessWidget {
+class DeviceInfoDisplay extends StatefulWidget {
+  @override
+  _DeviceInfoDisplayState createState() => _DeviceInfoDisplayState();
+}
+
+class _DeviceInfoDisplayState extends State<DeviceInfoDisplay> {
+  static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
   final List<String> categories = [
     'Model',
     'Brand',
@@ -64,6 +73,7 @@ class DeviceInfoDisplay extends StatelessWidget {
     'ID',
     'Product'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
