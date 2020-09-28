@@ -68,15 +68,27 @@ class HomeBody extends StatelessWidget {
   HomeBody({this.data});
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'hello',
+    return ListView(
+      padding: const EdgeInsets.all(8),
+      children: data.keys
+          .map(
+            (property) => Container(
+              height: 55,
+              child: Column(
+                children: [
+                  Text(
+                    '$property ${data[property]['name']}',
+                  ),
+                  Text(
+                    '${data[property]['desc']}',
+                    textScaleFactor: 0.8,
+                  ),
+                ],
+                crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+            ),
           )
-        ],
-      ),
+          .toList(),
     );
   }
 }
