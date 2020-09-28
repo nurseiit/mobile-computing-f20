@@ -1,0 +1,58 @@
+{
+  "102": {
+    "name":"Engineering Bldg. 1",
+    "desc": "School of Materials Science and Engineering"
+  },
+  "104": {
+    "name":"Engineering Bldg. 2",
+    "desc": "School of Energy and Chemical Enginnering, Design and Human Engineering"
+  },
+  "106": {
+    "name":"Engineering Bldg. 3",
+    "desc": "School of Electrical and Computer Engineering"
+  },
+  "108": {
+    "name":"Natural Science Bldg.",
+    "desc": "School of Natural Science"
+  },
+  "110": {
+    "name":"Engineering Bldg. 4",
+    "desc": "School of Urban and Environment Engineering"
+  },
+  "112": {
+    "name":"Engineering Bldg. 5",
+    "desc": "School of Mechanical, Aerospace and Nuclear Engineering"
+  },
+  "114": {
+    "name":"Business Administration Bldg.",
+    "desc": "School of Business Administration"
+  },
+  "201": {
+    "name":"Main Administration Bldg.",
+    "desc": "Kyongnam Bank"
+  },
+  "202": {
+    "name":"Library",
+    "desc": "International Center"
+  },
+  "203": {
+    "name":"Student Union Bldg.",
+    "desc": "Student Clubs"
+  },
+  "204": {
+    "name":"Community Center",
+    "desc": "-"
+  },
+  "205": {
+    "name":"Gymnasium",
+    "desc": "UNIST Sports Center"
+  },
+  "206": {
+    "name":"Cafeteria",
+    "desc": "-"
+  },
+  "300": {
+    "name":"Student Dormitory",
+    "desc": "-"
+  }
+}
