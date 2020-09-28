@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String data;
+  Map<String, dynamic> data;
 
   Future<Map<String, dynamic>> parseJsonFromAssets(String assetsPath) async {
     return rootBundle
@@ -38,9 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
         .then((jsonStr) => jsonDecode(jsonStr));
   }
 
+  Future<void> initData() async {
+    final Map<String, dynamic> jsonData =
+        await parseJsonFromAssets('assets/building-info.json');
+    setState(() {
+      data = jsonData;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    initData();
   }
 
   @override
@@ -55,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class HomeBody extends StatelessWidget {
-  final String data;
+  final Map<String, dynamic> data;
   HomeBody({this.data});
   @override
   Widget build(BuildContext context) {
@@ -64,7 +73,7 @@ class HomeBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            data,
+            'hello',
           )
         ],
       ),
