@@ -68,27 +68,32 @@ class HomeBody extends StatelessWidget {
   HomeBody({this.data});
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: data.keys
-          .map(
-            (property) => Container(
-              height: 55,
-              child: Column(
-                children: [
-                  Text(
-                    '$property ${data[property]['name']}',
-                  ),
-                  Text(
-                    '${data[property]['desc']}',
-                    textScaleFactor: 0.8,
-                  ),
-                ],
-                crossAxisAlignment: CrossAxisAlignment.start,
+    if (data != null)
+      return ListView(
+        padding: const EdgeInsets.all(8),
+        children: data.keys
+            .map(
+              (property) => Container(
+                height: 55,
+                child: Column(
+                  children: [
+                    Text(
+                      '$property ${data[property]['name']}',
+                    ),
+                    Text(
+                      '${data[property]['desc']}',
+                      textScaleFactor: 0.8,
+                    ),
+                  ],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
               ),
-            ),
-          )
-          .toList(),
-    );
+            )
+            .toList(),
+      );
+    else
+      return Center(
+        child: Text('Loading...'),
+      );
   }
 }
